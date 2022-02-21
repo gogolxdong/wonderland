@@ -14,7 +14,7 @@ import { ethers } from "ethers";
 import { IAccountSlice, fetchAccountSuccess } from "src/store/slices/account-slice";
 import { Skeleton } from "@material-ui/lab";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { trim } from "../../helpers";
+import { shorten, trim } from "../../helpers";
 import { SonTableData, SonDataCard } from "./ReferralRow";
 import { metamaskErrorWrap } from "../../helpers/metamask-error-wrap";
 import copy from "copy-to-clipboard";
@@ -161,7 +161,7 @@ function Referral() {
                             <div className="referral-card-action-row">
                                 <div className="referral-card-header">
                                     <p className="referral-card-header-title">My Invite Code:</p>
-                                    <p className="referral-card-header-title">{address}</p>
+                                    <p style={{ fontSize: "14px", color: "white" }}>{address}</p>
                                 </div>
                                 <div className="referral-card-tab-panel">
                                     <div
@@ -183,7 +183,7 @@ function Referral() {
                                         <div className="referral-card-action-row">
                                             <div className="referral-card-header">
                                                 <p className="referral-card-header-title">My Referral:</p>
-                                                <p className="referral-card-header-title">{referral}</p>
+                                                <p style={{ fontSize: "14px", color: "white" }}>{referral}</p>
                                             </div>
                                         </div>
                                     </div>

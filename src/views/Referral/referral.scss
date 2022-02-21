@@ -33,7 +33,9 @@
                 font-size: 18px;
                 color: #ffffff;
                 margin-bottom: 4px;
+                
             }
+           
         }
 
         .referral-card-metrics {
@@ -76,10 +78,10 @@
 
         .referral-card-area {
             .choose-son-view {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                // flex-direction: column;
                 overflow: hidden;
 
                 max-width: 833px;
@@ -139,8 +141,8 @@
                         .MuiTableCell-body {
                             color: #fff;
                         }
-                        .MuiTableCell-root{
-                          padding: 0 ;
+                        .MuiTableCell-root {
+                            padding: 0;
                         }
                         .choose-son-view-card-table-title {
                             font-family: Montserrat SemiBold;
@@ -185,7 +187,12 @@
                             justify-content: space-between;
                             flex-direction: row;
                             margin: 12px 0;
-
+                            @media screen and (max-width: 600px) {
+                                // flex-direction: column;
+                                // align-items: center;
+                                color:white;
+                                // font-size:13px;
+                            }
                             .son-profit {
                                 display: flex;
                                 align-items: center;
@@ -376,7 +383,7 @@
                 .referral-card-action-row {
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
+                    // justify-content: space-between;
                     margin-top: 20px;
 
                     .referral-card-action-input {
@@ -484,6 +491,7 @@
         line-height: 17px;
         color: #ffffff;
     }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -516,6 +524,7 @@
                         }
                     }
                 }
+                
             }
         }
     }

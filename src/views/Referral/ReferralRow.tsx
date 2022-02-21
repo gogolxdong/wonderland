@@ -1,5 +1,5 @@
-import { priceUnits, trim } from "../../helpers";
-import { Paper, TableRow, TableCell, Slide, Link } from "@material-ui/core";
+import { priceUnits, shorten, trim } from "../../helpers";
+import { Paper, TableRow, TableCell, Slide, Link, useMediaQuery } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
 import "./referral.scss";
 import { Skeleton } from "@material-ui/lab";
@@ -12,6 +12,7 @@ interface ISonProps {
 
 export function SonDataCard({ son }: ISonProps) {
     const isBondLoading = !son.profit ?? true;
+    const isSmallScreen = useMediaQuery("(max-width: 600px)");
 
     return (
         <Slide direction="up" in={true}>
@@ -19,13 +20,13 @@ export function SonDataCard({ son }: ISonProps) {
                 <div className="data-row">
                     <p className="son-name-title">Address</p>
                     <p className="son-price son-name-title">
-                        <>{son.address}</>
+                        <>{isSmallScreen ? shorten(son.address) : son.address}</>
                     </p>
                 </div>
 
                 <div className="data-row">
                     <p className="son-name-title">Profit</p>
-                    <p className="son-name-title">{isBondLoading ? <Skeleton width="80px" /> : son.profit.toNumber() / 10 ** 9}</p>
+                    <p className="son-name-title">{son.profit.toNumber() / 10 ** 9}</p>
                 </div>
             </Paper>
         </Slide>
